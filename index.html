@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productivity+ | To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>📋 Productivity+</h1>
+      <div class="controls">
+        <button onclick="toggleTheme()">🌗</button>
+        <button onclick="toggleFocusMode()">🎯 Focus Mode</button>
+      </div>
+    </header>
+
+    <section class="quote" id="quote">"Productivity is never an accident." – Paul J. Meyer</section>
+
+    <section class="task-input">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="date" id="dueDate" />
+      <button onclick="addTask()">Add</button>
+    </section>
+
+    <section class="task-controls">
+      <input type="text" id="search" placeholder="🔍 Search tasks..." oninput="renderTasks()" />
+      <select id="filter" onchange="renderTasks()">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="done">Completed</option>
+        <option value="high">High Priority</option>
+      </select>
+    </section>
+
+    <ul id="taskList"></ul>
+
+    <footer>
+      <p>© 2025 Dhruv Pandit — Productivity+</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
